@@ -1,60 +1,70 @@
 #include <stdio.h>
 #include <wiringPi.h>
+#include <softPwm.h>
 
-void wiringPiInit(void) {
-    pinMode(27, OUTPUT); // led red
-    pinMode(28, OUTPUT); // led green
-    pinMode(29, OUTPUT); // led blue
+'''
+gcc -o main \
+    main.c \
+    button.c \
+    camera.c \
+    dcmotor.c \
+    fnd.c \
+    lcd.c \
+    led.c \
+    potenandjodo.c \
+    remotecontrol.c \
+    servomoter.c \
+    sound.c \
+    stepmotor.c \
+    tostring.c \
+    ultrasonic.c \
+    TM1637.c \
+    irpigpio.c \
+    -lwiringPi \
+    -lwiringPiDev \
+    -lpthread \
+    -lpigpio \
+    -I. \
+    -fcommon
+'''
 
-    pinMode(30, OUTPUT); // simple buzz
+// gcc -o main main.c button.c camera.c dcmotor.c fnd.c lcd.c led.c potenandjodo.c remotecontrol.c servomoter.c sound.c stepmotor.c tostring.c ultrasonic.c TM1637.c irpigpio.c -lwiringPi -lwiringPiDev -lpthread -lpigpio -I. -fcommon
+void ledInit(void) {
+    pinMode(27, SOFT_PWM_OUTPUT); // led red
+    pinMode(28, SOFT_PWM_OUTPUT); // led green
+    pinMode(29, SOFT_PWM_OUTPUT); // led blue
+
+    softPwmCreate(27, 0, 255); // led red
+    softPwmCreate(28, 0, 255); // led green
+    softPwmCreate(29, 0, 255); // led blue
 }
 
-void redLedOnOff(int d = 0) {
-    digitalWrite(27, HIGH);
+void redLedOn(int q = 255) {
+    softToneWrite(27, q);
 }
 
-void redLedOff(void) {
-    digitalWrite(27, LOW);
+void redLedOff() {
+    softToneWrite(27, 0);
 }
 
-void greenLedOn(void) {
-    digitalWrite(28, HIGH);
+void greenLedOn(int w = 255) {
+    softToneWrite(28, w);
 }
 
-void greenLedOff(void) {
-    digitalWrite(28, LOW);
+void greenLedOff() {
+    softToneWrite(28, 0);
 }
 
-void blueLedOn(void) {
-    digitalWrite(29, HIGH);
+void blueLedOn(int e = 255) {
+    softToneWrite(29, e);
 }
 
-void blueLedOff(void) {
-    digitalWrite(29, LOW);
+void blueLedOff() {
+    softToneWrite(29, 0);
 }
 
-void buzzOn(void) {
-    digitalWrite(30, HIGH);
-}
-
-void buzzOff(void) {
-    digitalWrite(30, LOW);
-}
-
-void camera() {
-    char cmd[] = "sudo libcamera-jpeg --width 800 --height 800 -t 1 -o test.jpeg";
-    system(cmd);
-    printf("Take a picture \n");
-}
-
-
-int main(void) {
-    if (wiringPiSetup() == -1) {
-        return 1;
-    }
-
-
-    wiringPiInit();
-
-    return 0;
+void allLedOff() {
+    softToneWrite(27, 0);
+    softToneWrite(28, 0);
+    softToneWrite(29, 0);
 }
