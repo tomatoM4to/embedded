@@ -39,7 +39,7 @@ void ledInit(void) {
     softPwmCreate(29, 0, 255); // led blue
 }
 
-void redLedOn(int q = 255) {
+void redLedOn(int q) {
     softToneWrite(27, q);
 }
 
