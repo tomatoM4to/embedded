@@ -13,7 +13,7 @@ void buzzerInit(void) {
     softToneCreate(BUZ_P_PIN);
 }
 
-void buzzerOn(char v = 'q') {
+void buzzerOn(char v) {
     if (v == 'q') {
         digitalWrite(30, HIGH);
     }
