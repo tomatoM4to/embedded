@@ -2,7 +2,7 @@
 gcc -o main \
     main.c \
     button.c \
-    camera.c \
+    camara.c \
     dcmotor.c \
     fnd.c \
     lcd.c \
