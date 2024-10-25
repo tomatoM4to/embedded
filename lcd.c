@@ -22,7 +22,7 @@ void lcdInit() {
 }
 
 void lcdWrite(char* str) {
-    int fd = lcdInit (2, 16, 4, LCD_RS_PIN, LCD_EN_PIN, LCD_D4_PIN, LCD_D5_PIN, LCD_D6_PIN, LCD_D7_PIN, 0, 0, 0, 0);
+    int fd = lcdInit(2, 16, 4, LCD_RS_PIN, LCD_EN_PIN, LCD_D4_PIN, LCD_D5_PIN, LCD_D6_PIN, LCD_D7_PIN, 0, 0, 0, 0);
     lcdClear(fd); // 화면 지우기
     delay(100);
 
@@ -34,13 +34,13 @@ void lcdWrite(char* str) {
 }
 
 void lcdClear() {
-    int fd = lcdInit (2, 16, 4, LCD_RS_PIN, LCD_EN_PIN, LCD_D4_PIN, LCD_D5_PIN, LCD_D6_PIN, LCD_D7_PIN, 0, 0, 0, 0);
+    int fd = lcdInit(2, 16, 4, LCD_RS_PIN, LCD_EN_PIN, LCD_D4_PIN, LCD_D5_PIN, LCD_D6_PIN, LCD_D7_PIN, 0, 0, 0, 0);
     lcdClear(fd); // 화면 지우기
     delay(100);
 }
 
 void lcdWriteOver(char* str) {
-    int fd = lcdInit (2, 16, 4, LCD_RS_PIN, LCD_EN_PIN, LCD_D4_PIN, LCD_D5_PIN, LCD_D6_PIN, LCD_D7_PIN, 0, 0, 0, 0);
+    int fd = lcdInit(2, 16, 4, LCD_RS_PIN, LCD_EN_PIN, LCD_D4_PIN, LCD_D5_PIN, LCD_D6_PIN, LCD_D7_PIN, 0, 0, 0, 0);
     lcdClear(fd); // 화면 지우기
     delay(100);
 
@@ -49,7 +49,7 @@ void lcdWriteOver(char* str) {
 }
 
 void lcdWriteUnder(char* str) {
-    int fd = lcdInit (2, 16, 4, LCD_RS_PIN, LCD_EN_PIN, LCD_D4_PIN, LCD_D5_PIN, LCD_D6_PIN, LCD_D7_PIN, 0, 0, 0, 0);
+    int fd = lcdInit(2, 16, 4, LCD_RS_PIN, LCD_EN_PIN, LCD_D4_PIN, LCD_D5_PIN, LCD_D6_PIN, LCD_D7_PIN, 0, 0, 0, 0);
     lcdPosition(fd, 2, 1); // 아랫줄 2번째 칸
     lcdPuts(fd, str); // 문자열 출력
 }
