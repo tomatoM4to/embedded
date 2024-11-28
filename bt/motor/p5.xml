@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/speedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:text="현재 속도: 50"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btConnectBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="블루투스 연결"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/checkSpeedBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="속도확인"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/leftBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="◀"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="16dp">
+
+            <Button
+                android:id="@+id/upBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="▲"/>
+
+            <Button
+                android:id="@+id/stopBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="정지"/>
+
+            <Button
+                android:id="@+id/downBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="▼"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/rightBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="▶"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/decreaseBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="감속"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/increaseBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="가속"/>
+    </LinearLayout>
+</LinearLayout>
