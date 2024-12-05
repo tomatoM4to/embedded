@@ -4,30 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center_horizontal">
 
-    <!-- 상단 텍스트 -->
+    <!-- 상단 제목 -->
     <TextView
-        android:id="@+id/titleText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#4CAF50"
+        android:background="#FFA500"
         android:gravity="center"
         android:padding="8dp"
-        android:text="실습 5번"
+        android:text="실습 6번"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
     <!-- Bluetooth 아이콘 -->
     <ImageView
-        android:id="@+id/bluetoothIcon"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:src="@android:drawable/ic_menu_send" />
 
-    <!-- 속도 확인 버튼과 출력 -->
+    <!-- 속도 버튼과 출력 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,14 +33,12 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/checkSpeedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="속도 확인" />
+            android:text="속도" />
 
         <TextView
-            android:id="@+id/speedOutput"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -51,89 +47,86 @@
             android:padding="8dp" />
     </LinearLayout>
 
-    <!-- 방향 버튼 -->
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:columnCount="3"
-        android:rowCount="3">
-
-        <!-- 빈칸 -->
-        <Space
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
-
-        <!-- 위쪽 버튼 -->
-        <Button
-            android:id="@+id/upButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="▲" />
-
-        <!-- 빈칸 -->
-        <Space
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
-
-        <!-- 왼쪽 버튼 -->
-        <Button
-            android:id="@+id/leftButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="◀" />
-
-        <!-- 빈칸 -->
-        <Space
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
-
-        <!-- 오른쪽 버튼 -->
-        <Button
-            android:id="@+id/rightButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="▶" />
-
-        <!-- 빈칸 -->
-        <Space
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
-
-        <!-- 아래쪽 버튼 -->
-        <Button
-            android:id="@+id/downButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="▼" />
-    </GridLayout>
-
-    <!-- 가속, 정지, 감속 버튼 -->
+    <!-- 가속, 감속 버튼 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/accelerateButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="가속" />
 
         <Button
-            android:id="@+id/stopButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="정지" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="▲" />
 
         <Button
-            android:id="@+id/decelerateButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="감속" />
     </LinearLayout>
+
+    <!-- 방향 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="◀" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="정지" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="▶" />
+    </LinearLayout>
+
+    <!-- 아래쪽 버튼 -->
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:text="▼" />
+
+    <!-- 추가 버튼 (좌측, 전방, 우측) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="좌측" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="전방" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="우측" />
+    </LinearLayout>
+
 </LinearLayout>
